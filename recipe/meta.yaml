@@ -3,7 +3,7 @@ package:
   version: 7.4.1
 
 source:
-  url: https://grass.osgeo.org/grass74/source/grass-7.4.1.tar.gz
+  url: https://grass.osgeo.org/grass78/source/grass-7.8.2.tar.gz
   patches:
     - platform.make.in.patch [osx]
     - platform.make.in-linux.patch [linux]
@@ -22,15 +22,16 @@ requirements:
     - clangxx_osx-64 [osx]
     - gcc_linux-64 [linux]
     - gxx_linux-64 [linux]
+    - mesalib
+    - libglu
     - python
     - setuptools
     - numpy
-    - gdal 2.0.*
+    - gdal
     - freetype
     - cairo
     - matplotlib
     - pandoc
-    - pil
     - wxpython
     - sqlite
     - jpeg
@@ -42,21 +43,22 @@ requirements:
     - blas
     - giflib
     - python.app [osx]
-    - proj4
+    - proj
     - geos
     - krb5
+    - flex
+    - bison
 
   run:
     - libgcc
     - python
     - setuptools
     - numpy
-    - gdal 2.0.*
+    - gdal
     - freetype
     - cairo
     - matplotlib
     - pandoc
-    - pil
     - wxpython
     - sqlite
     - jpeg
@@ -68,7 +70,7 @@ requirements:
     - blas
     - giflib
     - python.app [osx]
-    - proj4
+    - proj
     - geos
     - krb5
 
@@ -86,4 +88,3 @@ about:
   home: https://grass.osgeo.org/
   license: GPLv2
   dev_url: https://grass.osgeo.org/development/
-

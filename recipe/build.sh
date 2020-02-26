@@ -14,6 +14,7 @@ CONFIGURE_FLAGS="\
   --with-freetype \
   --with-freetype-includes=$PREFIX/include/freetype2 \
   --with-freetype-libs=$PREFIX/lib \
+  --without-opengl \
   --with-gdal=$PREFIX/bin/gdal-config \
   --with-gdal-libs=$PREFIX/lib \
   --with-proj=$PREFIX/bin/proj \

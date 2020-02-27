@@ -1,6 +1,6 @@
 package:
   name: grass
-  version: 7.4.1
+  version: 7.8.2
 
 source:
   url: https://grass.osgeo.org/grass78/source/grass-7.8.2.tar.gz

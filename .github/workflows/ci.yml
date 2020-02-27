@@ -24,4 +24,4 @@ jobs:
         conda install make
     - name: Build
       run: |
-        conda build --path /test /grass-recipe/recipe/ --python=3.7
+        conda build /grass-recipe/recipe/ --python=3.7

@@ -1,0 +1,27 @@
+name: CI
+
+on:
+- push
+- pull_request
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: goanpeca/setup-miniconda@v1
+        with:
+          auto-update-conda: true
+          python-version: 3.7
+    - name: Configure
+      run: |
+        conda config --set always_yes yes
+        conda install -q conda-build
+        conda config --add channels conda-forge
+        conda config --add channels csdms-stack
+        conda install make
+    - name: Build
+      run: |
+        conda build --path /test /grass-recipe/recipe/ --python=3.7

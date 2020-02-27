@@ -12,9 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: goanpeca/setup-miniconda@v1
-        with:
-          auto-update-conda: true
-          python-version: 3.7
+      with:
+        auto-update-conda: true
+        python-version: 3.7
     - name: Configure
       run: |
         conda config --set always_yes yes

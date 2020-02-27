@@ -23,7 +23,7 @@ requirements:
     - gcc_linux-64 [linux]
     - gxx_linux-64 [linux]
     - mesalib
-    - libglu
+    - libglu [linux]
     - python
     - setuptools
     - numpy

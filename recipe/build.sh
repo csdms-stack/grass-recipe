@@ -54,6 +54,11 @@ if [ $(uname) == Darwin ]; then
 #    --enable-macosx-app
 #    --with-opencl
 #  --with-macosx-sdk=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+else
+  CONFIGURE_FLAGS="\
+    $CONFIGURE_FLAGS \
+    --with-opengl \
+    "
 fi
 
 ./configure $CONFIGURE_FLAGS

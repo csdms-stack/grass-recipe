@@ -62,9 +62,9 @@ else
 fi
 
 ./configure $CONFIGURE_FLAGS || (tail -400 "config.log" && echo "ERROR in configure step" && exit -1)
-make -j4 GDAL_DYNAMIC= > out.txt 2>&1 || (tail -400 out.txt && echo "ERROR in make step" && exit -1)
+make -j1 GDAL_DYNAMIC= > out.txt 2>&1 || (tail -1000 out.txt && echo "ERROR in make step" && exit -1)
 # make -j4 GDAL_DYNAMIC=
-make -j4 install
+make -j1 install
 
 # for d in bin etc include lib scripts share; do
 #   cp -r dist.*/$d $PREFIX

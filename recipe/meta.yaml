@@ -43,6 +43,7 @@ requirements:
     - blas
     - giflib
     - python.app [osx]
+    - poppler
     - proj
     - geos
     - krb5

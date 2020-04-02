@@ -44,7 +44,7 @@ requirements:
     - blas
     - giflib
     - python.app [osx]
-    - poppler ==0.87
+    - poppler ==0.84
     - proj ==6.3.1
     - geos ==3.8.1
     - krb5

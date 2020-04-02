@@ -1,9 +1,11 @@
 package:
   name: grass
-  version: 7.8.2
+  version: 7.8.3
 
 source:
-  url: https://grass.osgeo.org/grass78/source/grass-7.8.2.tar.gz
+  git_url: https://github.com/OSGeo/grass.git
+  git_rev: releasebranch_7_8
+  git_depth: 1
   patches:
     - platform.make.in.patch [osx]
     - platform.make.in-linux.patch [linux]

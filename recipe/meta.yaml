@@ -25,16 +25,16 @@ requirements:
     - gxx_linux-64 [linux]
     - mesalib
     - libglu [linux]
-    - python 3.7.4|3.7.7|>=3.8.2
+    - python 3.6.10
     - setuptools
     - numpy
-    - gdal >=3.0.3
+    - gdal
     - freetype
     - cairo
     - matplotlib
     - pandoc
     - wxpython
-    - sqlite >=3.31.1
+    - sqlite
     - jpeg
     - libpng
     - libtiff
@@ -44,16 +44,16 @@ requirements:
     - blas
     - giflib
     - python.app [osx]
-    - poppler >=0.84
-    - proj >=6.3.1
-    - geos >=3.8.1
+    - poppler
+    - proj
+    - geos
     - krb5
     - flex
     - bison
 
   run:
     - libgcc
-    - python
+    - python 3.6.10
     - setuptools
     - numpy
     - gdal

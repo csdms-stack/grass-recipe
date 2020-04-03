@@ -31,8 +31,8 @@
  CAIRO_HAS_XRENDER_SURFACE = @CAIRO_HAS_XRENDER_SURFACE@
  
  #Python
--PYTHON              = python
-+PYTHON              = ${prefix}/bin/python
+-PYTHON              = python3
++PYTHON              = ${prefix}/bin/python3
  
  #regex
  REGEXINCPATH        = @REGEXINCPATH@

@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -x
+
 export PATH=$PREFIX/bin:/usr/bin:/bin:/usr/sbin:/etc:/usr/lib
 
 if [ $(uname) == Darwin ]; then
@@ -10,10 +12,12 @@ else
 fi
 
 CONFIGURE_FLAGS="\
+  --enable-64bit \
   --prefix=$PREFIX \
   --with-freetype \
   --with-freetype-includes=$PREFIX/include/freetype2 \
   --with-freetype-libs=$PREFIX/lib \
+  --without-opengl \
   --with-gdal=$PREFIX/bin/gdal-config \
   --with-gdal-libs=$PREFIX/lib \
   --with-proj=$PREFIX/bin/proj \
@@ -40,7 +44,6 @@ CONFIGURE_FLAGS="\
   --with-cairo-libs=$PREFIX/lib \
   --with-cairo-ldflags="-lcairo" \
   --without-readline \
-  --enable-64bit \
   --with-libs=$PREFIX/lib \
   --with-includes=$PREFIX/include \
 "
@@ -49,16 +52,21 @@ if [ $(uname) == Darwin ]; then
   CONFIGURE_FLAGS="\
     $CONFIGURE_FLAGS \
     --with-opengl=aqua \
+    --with-macosx-sdk=$CONDA_BUILD_SYSROOT \
     "
 #    --enable-macosx-app
 #    --with-opencl
-#  --with-macosx-sdk=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+else
+  CONFIGURE_FLAGS="\
+    $CONFIGURE_FLAGS \
+    --with-opengl \
+    "
 fi
 
-./configure $CONFIGURE_FLAGS
-make -j4 GDAL_DYNAMIC= > out.txt 2>&1 || (tail -400 out.txt && echo "ERROR in make step" && exit -1)
+./configure $CONFIGURE_FLAGS || (tail -400 "config.log" && echo "ERROR in configure step" && exit -1)
+make -j1 GDAL_DYNAMIC= > out.txt 2>&1 || (tail -7000 out.txt && echo "ERROR in make step" && exit -1)
 # make -j4 GDAL_DYNAMIC=
-make -j4 install
+make -j1 install
 
 # for d in bin etc include lib scripts share; do
 #   cp -r dist.*/$d $PREFIX

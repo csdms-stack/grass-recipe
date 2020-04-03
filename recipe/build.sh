@@ -50,10 +50,10 @@ if [ $(uname) == Darwin ]; then
   CONFIGURE_FLAGS="\
     $CONFIGURE_FLAGS \
     --with-opengl=aqua \
+    --with-macosx-sdk=$CONDA_BUILD_SYSROOT \
     "
 #    --enable-macosx-app
 #    --with-opencl
-#  --with-macosx-sdk=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
 else
   CONFIGURE_FLAGS="\
     $CONFIGURE_FLAGS \

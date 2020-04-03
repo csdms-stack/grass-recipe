@@ -10,6 +10,7 @@ else
 fi
 
 CONFIGURE_FLAGS="\
+  --enable-64bit \
   --prefix=$PREFIX \
   --with-freetype \
   --with-freetype-includes=$PREFIX/include/freetype2 \
@@ -41,7 +42,6 @@ CONFIGURE_FLAGS="\
   --with-cairo-libs=$PREFIX/lib \
   --with-cairo-ldflags="-lcairo" \
   --without-readline \
-  --enable-64bit \
   --with-libs=$PREFIX/lib \
   --with-includes=$PREFIX/include \
 "

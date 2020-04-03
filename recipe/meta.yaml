@@ -25,10 +25,10 @@ requirements:
     - gxx_linux-64 [linux]
     - mesalib
     - libglu [linux]
-    - python 3.6.10
+    - python <3.7.0
     - setuptools
     - numpy
-    - gdal
+    - gdal >2
     - freetype
     - cairo
     - matplotlib
@@ -53,10 +53,10 @@ requirements:
 
   run:
     - libgcc
-    - python 3.6.10
+    - python <3.7.0
     - setuptools
     - numpy
-    - gdal
+    - gdal >2
     - freetype
     - cairo
     - matplotlib

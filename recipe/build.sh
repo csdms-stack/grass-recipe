@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -x
+
 export PATH=$PREFIX/bin:/usr/bin:/bin:/usr/sbin:/etc:/usr/lib
 
 if [ $(uname) == Darwin ]; then
